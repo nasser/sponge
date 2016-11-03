@@ -1,0 +1,85 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+}
+
+#main h2 {
+  text-align: center;
+}
+
+.column {
+  width: 600px;
+  margin-left: 1em;
+  flex-direction: column;
+}
+
+.center.column {
+  width: 400px;
+}
+
+.last.column {
+  width: 200px;
+}
+
+textarea {
+  font-family: monospace;
+  font-size: 2em;
+  width: 100%;
+}
+
+#scrubber {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+#scrubber button.run {
+  background: url(/images/play-button.png);
+  width: 40px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
+}
+
+#scrubber input {
+  width: 100%;
+}
+
+#scrubber .current::after {
+  content: "/";
+}
+
+#tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tools button {
+  opacity: 0.25;
+  background: white;
+  border: 1px solid #999;
+  width: 80px;
+  margin: 0.5em;
+  /*cursor: pointer;*/
+}
+
+select {
+  width: 100%;
+}
+
+#tools button:hover {
+  /*border: 1px solid #000;*/
+}
+
+#footer {
+  margin-top: 2em;
+  text-align: center;
+}
