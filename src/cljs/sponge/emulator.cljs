@@ -97,9 +97,12 @@
 (defn slurp [& args]
   args)
 
+(defn template [named]
+  (.. (js/document.querySelector (str "template[id='" named "'")) -innerHTML))
+
 (defn instr->svg [[op & args]]
   (let [argmap (apply hash-map (interleave "abcdefg" args))
-        template (slurp (str "templates/" (name op) ".svg"))]
+        template (template (name op))]
     (reduce-kv (fn [svg placeholder actual]
                  (string/replace svg
                                  (str "$" placeholder)
@@ -112,6 +115,8 @@
        (->> program
             :instr
             (map instr->svg)
-            (apply str)
-            println)
+            (map-indexed
+              (fn [i doc]
+                (string/replace doc "$n" (str i))))
+            (apply str))
        "</body></html>"))

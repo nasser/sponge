@@ -1,12 +1,329 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset='utf-8'>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="text/javascript">
+<head>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <template id="÷">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11in"
+    height="8in" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+
+    <text transform="matrix(1 0 0 1 35.4492 55.3643)" font-family="Helvetica" font-size="40.5"># $n</text>
+
+
+    <circle fill="#FFFFFF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="124.78" cy="306" r="79.268"/>
+    <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="252.684" y1="131" x2="252.684" y2="481"/>
+    
+    <g text-anchor="middle" font-family="Helvetica" font-size="42" >
+      <text transform="translate(525 250)">
+        Divide <tspan font-style="italic" text-decoration="underline">cell $a</tspan> by
+      </text>
+      <text transform="translate(525 300)">
+        <tspan font-style="italic" text-decoration="underline">cell $b</tspan>.
+      </text>
+      <text transform="translate(525 350)">
+      </text>
+      <text transform="translate(525 400)">
+        Write the result
+      </text>
+      <text transform="translate(525 450)">
+        in <tspan font-style="italic" text-decoration="underline">cell $c</tspan>.
+      </text>
+      <text transform="translate(525 450)">
+        
+      </text>
+    </g>
+    <text text-anchor="middle" transform="matrix(1 0 0 1 124.78 320.5586)" font-family="Helvetica" font-size="50">÷</text>
+  </svg>
+</template>
+<template id="*">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11in"
+  height="8in" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+
+  <text transform="matrix(1 0 0 1 35.4492 55.3643)" font-family="Helvetica" font-size="40.5"># $n</text>
+
+
+  <circle fill="#FFFFFF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="124.78" cy="306" r="79.268"/>
+  <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="252.684" y1="131" x2="252.684" y2="481"/>
+  
+  <g text-anchor="middle" font-family="Helvetica" font-size="42" >
+    <text transform="translate(525 250)">
+      Multiply <tspan font-style="italic" text-decoration="underline">cell $a</tspan> and
+    </text>
+    <text transform="translate(525 300)">
+      <tspan font-style="italic" text-decoration="underline">cell $b</tspan>.
+    </text>
+    <text transform="translate(525 350)">
+    </text>
+    <text transform="translate(525 400)">
+      Write the result
+    </text>
+    <text transform="translate(525 450)">
+      in <tspan font-style="italic" text-decoration="underline">cell $c</tspan>.  
+    </text>
+    <text transform="translate(525 450)">
+      
+    </text>
+  </g>
+  <text text-anchor="middle" transform="matrix(1 0 0 1 124.78 320.5586)" font-family="Helvetica" font-size="50">×</text>
+</svg>
+</template>
+<template id="+">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11in"
+  height="8in" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+
+  <text transform="matrix(1 0 0 1 35.4492 55.3643)" font-family="Helvetica" font-size="40.5"># $n</text>
+
+
+  <circle fill="#FFFFFF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="124.78" cy="306" r="79.268"/>
+  <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="252.684" y1="131" x2="252.684" y2="481"/>
+  
+  <g text-anchor="middle" font-family="Helvetica" font-size="42" >
+    <text transform="translate(525 250)">
+      Add <tspan font-style="italic" text-decoration="underline">cell $a</tspan> and
+    </text>
+    <text transform="translate(525 300)">
+      <tspan font-style="italic" text-decoration="underline">cell $b</tspan>.
+    </text>
+    <text transform="translate(525 350)">
+    </text>
+    <text transform="translate(525 400)">
+      Write the result
+    </text>
+    <text transform="translate(525 450)">
+      in <tspan font-style="italic" text-decoration="underline">cell $c</tspan>.
+    </text>
+    <text transform="translate(525 450)">
+      
+    </text>
+  </g>
+
+  <text text-anchor="middle" transform="matrix(1 0 0 1 124.78 320.5586)" font-family="Helvetica" font-size="50">+</text>
+
+</svg>
+
+</template>
+<template id="-">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11in"
+  height="8in" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+
+  <text transform="matrix(1 0 0 1 35.4492 55.3643)" font-family="Helvetica" font-size="40.5"># $n</text>
+
+
+  <circle fill="#FFFFFF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="124.78" cy="306" r="79.268"/>
+  <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="252.684" y1="131" x2="252.684" y2="481"/>
+  
+  <g text-anchor="middle" font-family="Helvetica" font-size="42" >
+    <text transform="translate(525 250)">
+      Subtract <tspan font-style="italic" text-decoration="underline">cell $b</tspan> from
+    </text>
+    <text transform="translate(525 300)">
+      <tspan font-style="italic" text-decoration="underline">cell $a</tspan>.
+    </text>
+    <text transform="translate(525 350)">
+    </text>
+    <text transform="translate(525 400)">
+      Write the result
+    </text>
+    <text transform="translate(525 450)">
+      in <tspan font-style="italic" text-decoration="underline">cell $c</tspan>.
+    </text>
+    <text transform="translate(525 450)">
+      
+    </text>
+  </g>
+
+  <text text-anchor="middle" transform="matrix(1 0 0 1 124.78 320.5586)" font-family="Helvetica" font-size="50">—</text>
+
+</svg>
+
+</template>
+<template id="&lt;">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11in"
+  height="8in" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+
+  <text transform="matrix(1 0 0 1 35.4492 55.3643)" font-family="Helvetica" font-size="40.5"># $n</text>
+
+
+  <circle fill="#FFFFFF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="124.78" cy="306" r="79.268"/>
+  <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="252.684" y1="131" x2="252.684" y2="481"/>
+  
+  <g text-anchor="middle" font-family="Helvetica" font-size="42" >
+    <text transform="translate(525 200)">
+      Compare <tspan font-style="italic" text-decoration="underline">cell $a</tspan>
+    </text>
+    <text transform="translate(525 250)">
+      and <tspan font-style="italic" text-decoration="underline">cell $b</tspan>.  
+    </text>
+    <text transform="translate(525 300)">
+    </text>
+    <text transform="translate(525 350)">
+      If <tspan font-style="italic" text-decoration="underline">cell $a</tspan> is less, write 1
+    </text>
+    <text transform="translate(525 400)">
+      in <tspan font-style="italic" text-decoration="underline">cell $c</tspan>. Otherwise,
+    </text>
+    <text transform="translate(525 450)">
+      write 0 in <tspan font-style="italic" text-decoration="underline">cell $c</tspan>.
+    </text>
+  </g>
+
+  <text text-anchor="middle" transform="matrix(1 0 0 1 124.78 320.5586)" font-family="Helvetica" font-size="50">&lt;</text>
+
+</svg>
+
+</template>
+<template id="&gt;">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11in"
+  height="8in" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+
+  <text transform="matrix(1 0 0 1 35.4492 55.3643)" font-family="Helvetica" font-size="40.5"># $n</text>
+
+
+  <circle fill="#FFFFFF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="124.78" cy="306" r="79.268"/>
+  <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="252.684" y1="131" x2="252.684" y2="481"/>
+  
+  <g text-anchor="middle" font-family="Helvetica" font-size="42" >
+    <text transform="translate(525 200)">
+      Compare <tspan font-style="italic" text-decoration="underline">cell $a</tspan>
+    </text>
+    <text transform="translate(525 250)">
+      and <tspan font-style="italic" text-decoration="underline">cell $b</tspan>.  
+    </text>
+    <text transform="translate(525 300)">
+    </text>
+    <text transform="translate(525 350)">
+      If <tspan font-style="italic" text-decoration="underline">cell $a</tspan> is greater, write 1
+    </text>
+    <text transform="translate(525 400)">
+      in <tspan font-style="italic" text-decoration="underline">cell $c</tspan>. Otherwise,
+    </text>
+    <text transform="translate(525 450)">
+      write 0 in <tspan font-style="italic" text-decoration="underline">cell $c</tspan>.
+    </text>
+  </g>
+
+  <text text-anchor="middle" transform="matrix(1 0 0 1 124.78 320.5586)" font-family="Helvetica" font-size="50">&gt;</text>
+
+</svg>
+</template>
+<template id="copy">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11in"
+  height="8in" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+
+  <text transform="matrix(1 0 0 1 35.4492 55.3643)" font-family="Helvetica" font-size="40.5"># $n</text>
+
+
+  <circle fill="#FFFFFF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="124.78" cy="306" r="79.268"/>
+  <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="252.684" y1="131" x2="252.684" y2="481"/>
+  
+  <g text-anchor="middle" font-family="Helvetica" font-size="42" >
+    <text transform="translate(525 320)">
+      Copy <tspan font-style="italic" text-decoration="underline">cell $b</tspan> to <tspan font-style="italic" text-decoration="underline">cell $a</tspan>.
+    </text>
+  </g>
+
+  <text text-anchor="middle" transform="matrix(1 0 0 1 124.78 320.5586)" font-family="Helvetica" font-size="50">copy</text>
+
+</svg>
+
+</template>
+<template id="plot">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11in"
+  height="8in" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+
+  <text transform="matrix(1 0 0 1 35.4492 55.3643)" font-family="Helvetica" font-size="40.5"># $n</text>
+
+
+  <circle fill="#FFFFFF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="124.78" cy="306" r="79.268"/>
+  <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="252.684" y1="131" x2="252.684" y2="481"/>
+  
+  <g text-anchor="middle" font-family="Helvetica" font-size="42" >
+    <text transform="translate(525 250)">
+    </text>
+    <text transform="translate(525 300)">
+      Flip the sponge at
+    </text>
+    <text transform="translate(525 350)">
+      column <tspan font-style="italic" text-decoration="underline">cell $a</tspan>,
+      row <tspan font-style="italic" text-decoration="underline">cell $b</tspan>  
+    </text>
+    <text transform="translate(525 400)">
+      to its green side.
+    </text>
+    <text transform="translate(525 450)">
+      
+    </text>
+    <text transform="translate(525 450)">
+      
+    </text>
+  </g>
+
+  <text text-anchor="middle" transform="matrix(1 0 0 1 124.78 320.5586)" font-family="Helvetica" font-size="50">plot</text>
+
+</svg>
+
+</template>
+<template id="set">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11in"
+  height="8in" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+
+  <text transform="matrix(1 0 0 1 35.4492 55.3643)" font-family="Helvetica" font-size="40.5"># $n</text>
+
+
+  <circle fill="#FFFFFF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="124.78" cy="306" r="79.268"/>
+  <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="252.684" y1="131" x2="252.684" y2="481"/>
+  
+  <g text-anchor="middle" font-family="Helvetica" font-size="42" >
+    <text transform="translate(525 320)">
+      Write <tspan font-family="monospace">$b</tspan> in <tspan font-style="italic" text-decoration="underline">cell $a</tspan>.
+    </text>
+  </g>
+
+  <text text-anchor="middle" transform="matrix(1 0 0 1 124.78 320.5586)" font-family="Helvetica" font-size="50">set</text>
+
+</svg>
+
+</template>
+<template id="jump">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11in"
+  height="8in" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+
+  <text transform="matrix(1 0 0 1 35.4492 55.3643)" font-family="Helvetica" font-size="40.5"># $n</text>
+
+
+  <circle fill="#FFFFFF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="124.78" cy="306" r="79.268"/>
+  <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="252.684" y1="131" x2="252.684" y2="481"/>
+  
+  <g text-anchor="middle" font-family="Helvetica" font-size="42" >
+    <text transform="translate(525 250)">
+      If <tspan font-style="italic" text-decoration="underline">cell $a</tspan> is <tspan font-family="monospace">1</tspan>, go to
+    </text>
+    <text transform="translate(525 300)">
+      instruction <tspan font-style="italic" text-decoration="underline">cell $b</tspan> next.
+    </text>
+    <text transform="translate(525 350)">
+      
+    </text>
+    <text transform="translate(525 400)">
+      Otherwise, ignore this
+    </text>
+    <text transform="translate(525 450)">
+      instruction.
+    </text>
+    <text transform="translate(525 450)">
+      
+    </text>
+  </g>
+
+  <text text-anchor="middle" transform="matrix(1 0 0 1 124.78 320.5586)" font-family="Helvetica" font-size="50">jump</text>
+
+</svg>
+
+</template id="jump">
+</head>
+<body>
+  <div id="app"></div>
+  <script type="text/javascript">
     // http://stackoverflow.com/questions/13650534/how-to-select-line-of-text-in-textarea
     function selectTextareaLine(tarea,lineNum) {
       lineNum--; // array starts at 0
@@ -53,4 +370,4 @@
     <script src="js/compiled/app.js"></script>
     <script>sponge.core.main();</script>
   </body>
-</html>
+  </html>

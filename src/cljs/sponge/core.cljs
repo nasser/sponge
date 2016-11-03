@@ -16,19 +16,18 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Page
-
-(defn controls []
+(defn run-button []
   [:button.run {:onClick
-            (fn [e]
-              (let [prog (emu/parse-syntax
-                           (.. (js/document.querySelector "#program") -value))]
-                (reset! program-run (vec (emu/run prog)))
-                (swap! ui assoc :scrubber (dec (count @program-run)))))}])
+                (fn [e]
+                  (let [prog (emu/parse-syntax
+                               (.. (js/document.querySelector "#program") -value))]
+                    (reset! program-run (vec (emu/run prog)))
+                    (swap! ui assoc :scrubber (dec (count @program-run)))))}])
 
 (defn scrubber [run]
   (let [run (or run [])]
     [:div#scrubber
-     [controls]
+     [run-button]
      [:input {:disabled (empty? run)
               :type "range"
               :min 0
@@ -42,7 +41,13 @@
                              (-> step :ip inc)))}]
      [:span.current (if (empty? run) "0"
                       (str (inc (@ui :scrubber))))]
-     [:span.total (count run)]]))
+     [:span.total (count run)]
+     [:button {:onClick #(let [content (-> run last emu/printable)
+                               win (js/window.open)]
+                           (.. win -document open (write content))
+                           (.. win print))}
+      "Print"]
+     ]))
 
 (defn register-bank [regs names]
   (let [text-style {:textAnchor "middle"

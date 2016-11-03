@@ -4,6 +4,10 @@ body {
   flex-direction: column;
 }
 
+template {
+  display: none;
+}
+
 #main {
   display: flex;
   flex-direction: row;
@@ -64,7 +68,7 @@ textarea {
 
 #tools button {
   opacity: 0.25;
-  background: white;
+  background: white;0
   border: 1px solid #999;
   width: 80px;
   margin: 0.5em;
