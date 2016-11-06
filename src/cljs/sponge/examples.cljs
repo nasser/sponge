@@ -2,10 +2,10 @@
 
 (def examples
   {
-:x
+   :x
 "set a 0
 set b 0
-set c 8
+set c 9
 set d 1
 set e 1
 set f 7
@@ -17,7 +17,7 @@ plot a b
 jump h f
 jump i g
 set i 1
-set b 0
+set b -1
 set d -1
 jump i f"
    :creeper
@@ -34,7 +34,7 @@ plot b a
 plot c a
 jump a e
 jump f d
-set d 16
+set d 17
 set e 21
 set a 9
 plot a b
