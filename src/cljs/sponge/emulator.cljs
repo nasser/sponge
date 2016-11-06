@@ -1,6 +1,7 @@
 (ns sponge.emulator
   (:import goog.string.StringBuffer)
-  (:require [clojure.string :as string]))
+  (:require [clojure.string :as string]
+            cljs.reader))
 
 (defn get-cell [ctx x]
   (-> ctx :state (get x)))
