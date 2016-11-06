@@ -131,12 +131,12 @@
 
 (defn tools []
   [:div#tools 
-   [:button {:disabled true} [:img {:src "/images/freehand.png"}]]
-   [:button {:disabled true} [:img {:src "/images/line.png"}]]
-   [:button {:disabled true} [:img {:src "/images/rectangle.png"}]]
-   [:button {:disabled true} [:img {:src "/images/circle.png"}]]
-   [:button {:disabled true} [:img {:src "/images/filled-rectangle.png"}]]
-   [:button {:disabled true} [:img {:src "/images/filled-circle.png"}]]
+   [:button {:disabled true} [:img {:src "images/freehand.png"}]]
+   [:button {:disabled true} [:img {:src "images/line.png"}]]
+   [:button {:disabled true} [:img {:src "images/rectangle.png"}]]
+   [:button {:disabled true} [:img {:src "images/circle.png"}]]
+   [:button {:disabled true} [:img {:src "images/filled-rectangle.png"}]]
+   [:button {:disabled true} [:img {:src "images/filled-circle.png"}]]
    ]
   )
 
