@@ -24,9 +24,17 @@
                     (reset! program-run (vec (emu/run prog)))
                     (swap! ui assoc :scrubber (dec (count @program-run)))))}])
 
+(defn print-button [run]
+  [:button.print {:onClick #(let [content (-> run last emu/printable)
+                                  win (js/window.open)]
+                              (.. win -document open (write content))
+                              (.. win print))}
+   "Print"])
+
 (defn scrubber [run]
   (let [run (or run [])]
     [:div#scrubber
+     [print-button run]
      [run-button]
      [:input {:disabled (empty? run)
               :type "range"
@@ -41,13 +49,7 @@
                              (-> step :ip inc)))}]
      [:span.current (if (empty? run) "0"
                       (str (inc (@ui :scrubber))))]
-     [:span.total (count run)]
-     [:button {:onClick #(let [content (-> run last emu/printable)
-                               win (js/window.open)]
-                           (.. win -document open (write content))
-                           (.. win print))}
-      "Print"]
-     ]))
+     [:span.total (count run)]]))
 
 (defn register-bank [regs names]
   (let [text-style {:textAnchor "middle"

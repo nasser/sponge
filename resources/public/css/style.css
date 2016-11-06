@@ -52,6 +52,14 @@ textarea {
   cursor: pointer;
 }
 
+#scrubber button.print {
+  background: url(../images/print-button.png);
+  width: 45px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
+}
+
 #scrubber input {
   width: 100%;
 }
