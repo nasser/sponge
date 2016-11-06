@@ -144,7 +144,7 @@
 
 (defn page [program-run]
   [:div
-   [:h1 "The Slowest Computer On Earth"]
+   [:h1 "The Slowest Computer On Earth — Emulator Prototype"]
    [:div#main
     [:div.column
      [:h2 "Code"]
