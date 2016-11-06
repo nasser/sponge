@@ -161,7 +161,8 @@
      ]]
    [:div#footer
     [:p
-     "Developed by "
+     [:a {:href "https://github.com/nasser/sponge"} "Developed"]
+     " by "
      [:a {:href "http://kahoabe.net"} "Kaho Abe"]
      " and "
      [:a {:href "http://nas.sr"} "Ramsey Nasser"]
