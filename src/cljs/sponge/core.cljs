@@ -75,18 +75,18 @@
        names)]))
 
 (defn registers [regs]
-  [:g#registers  
+  [:g#registers {:transform "translate(0,20)"}
    [:g {:transform "translate(0,0)"}
     (register-bank regs '[a b c d e f g h])]
    [:g {:transform "translate(0,70)"}
     (register-bank regs '[i j k l m n o p])]])
 
 (defn grid [step]
-  [:g#grid
-   (let [plot (:plot step)
-         regs (:state step) 
-         size 34
-         gap 5]
+  (let [plot (:plot step)
+        regs (:state step) 
+        size 34
+        gap 5]
+    [:g#grid
      (for [x (range 10)
            y (range 10)]
        [:rect {:key [x y] 
@@ -98,7 +98,13 @@
                                    "green"
                                    "yellow")
                            :stroke "black"
-                           :strokeOpacity 0.125}}]))])
+                           :strokeOpacity 0.125}}])
+     (for [i (range 10)]
+       [:g
+        [:text {:x (+ (/ size 2) (* (+ gap size) i))
+                :y (+ 12 5 (* 10 (+ gap size)))} (str i)]
+        [:text {:y (+ (- size 6) (* (+ gap size) i))
+                :x (+ 5 (* 10 (+ gap size)))} (str i)]])]))
 
 (defn visualizer [run {:keys [scrubber] :as ui}]
   (let [step (nth run scrubber)]
