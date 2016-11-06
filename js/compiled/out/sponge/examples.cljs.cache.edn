@@ -1,2 +1,0 @@
-;; Analyzed by ClojureScript 1.8.51
-{:use-macros nil, :excludes #{}, :name sponge.examples, :imports nil, :requires nil, :uses nil, :defs {examples {:name sponge.examples/examples, :file "src/cljs/sponge/examples.cljs", :line 3, :column 1, :end-line 3, :end-column 14, :meta {:file "/Users/nasser/Projects/sponge/src/cljs/sponge/examples.cljs", :line 3, :column 6, :end-line 3, :end-column 14}}}, :require-macros nil, :cljs.analyzer/constants {:seen #{:diagonal :circle :creeper :x}, :order [:x :creeper :diagonal :circle]}, :doc nil}
