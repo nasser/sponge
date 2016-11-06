@@ -45,7 +45,7 @@ textarea {
 }
 
 #scrubber button.run {
-  background: url(images/play-button.png);
+  background: url(../images/play-button.png);
   width: 45px;
   height: 36px;
   border: none;
