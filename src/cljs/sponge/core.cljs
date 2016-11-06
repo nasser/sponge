@@ -118,7 +118,7 @@
       ]]))
 
 (defn code-input []
-  [:textarea#program {:rows 25 :cols 25}])
+  [:textarea#program {:rows 21 :cols 25}])
 
 (defn examples []
   [:select
