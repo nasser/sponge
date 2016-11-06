@@ -1,23 +1,7 @@
-# sponge
+The Slowest Computer in the World
+=================================
+a.k.a the sponge computer
 
-A [reagent](https://github.com/reagent-project/reagent) application designed to ... well, that part is up to you.
+Designed with [Kaho Abe](https://github.com/kahodesu) for [Eyebeam](http://eyebeam.org/)'s Playable Fashion workshop series.
 
-## Development Mode
-
-### Run application:
-
-```
-lein clean
-lein figwheel dev
-```
-
-Figwheel will automatically push cljs changes to the browser.
-
-Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
-
-## Production Build
-
-```
-lein clean
-lein cljsbuild once min
-```
+This emulator simulates the execution of the physical sponge computer and can generate printable PDF programs to give the human CPUs. It is written in [ClojureScript](http://clojurescript.org/) and runs in the browser.
