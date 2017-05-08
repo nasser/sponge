@@ -16,13 +16,26 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Page
+(defn svg-preview! []
+  (when-let [run @program-run]
+    (let [idx (:scrubber @ui)
+          step (nth run idx)
+          ip (:ip step)
+          instr (get (:instr step) ip)
+          svg (string/replace (emu/instr->svg instr) "$n" ip)]
+      ;; hack!
+      (when (js/document.querySelector "div#svg")
+        (set! (.. (js/document.querySelector "#svg") -innerHTML) svg)))))
+
+(defn run-program! []
+  (let [prog (emu/parse-syntax
+               (.. (js/document.querySelector "#program") -value))]
+    (reset! program-run (vec (emu/run prog)))
+    (swap! ui assoc :scrubber (- (count @program-run) 2))
+    (svg-preview!)))
+
 (defn run-button []
-  [:button.run {:onClick
-                (fn [e]
-                  (let [prog (emu/parse-syntax
-                               (.. (js/document.querySelector "#program") -value))]
-                    (reset! program-run (vec (emu/run prog)))
-                    (swap! ui assoc :scrubber (dec (count @program-run)))))}])
+  [:button.run {:onClick run-program!}])
 
 (defn print-button [run]
   [:button.print {:onClick #(let [content (-> run last emu/printable)
@@ -39,17 +52,21 @@
      [:input {:disabled (empty? run)
               :type "range"
               :min 0
-              :max (dec (count run))
+              :value (:scrubber @ui)
+              :max (- (count run) 2)
               :onChange #(let [textarea (js/document.querySelector "#program")
                                step-index (int (.. % -target -value))
                                step (nth run step-index)]
                            (swap! ui assoc :scrubber step-index)
+                           (svg-preview!)
                            (js/selectTextareaLine
                              textarea
                              (-> step :ip inc)))}]
      [:span.current (if (empty? run) "0"
                       (str (inc (@ui :scrubber))))]
-     [:span.total (count run)]]))
+     [:span.total (if (zero? (count run))
+                    (count run)
+                    (- (count run) 1))]]))
 
 (defn register-bank [regs names]
   (let [text-style {:textAnchor "middle"
@@ -124,8 +141,10 @@
 
 (defn examples []
   [:select
-   {:onChange #(set! (.. (js/document.querySelector "#program") -value)
-                     (ex/examples (keyword (.. % -target -value))))}
+   {:onChange (fn [e]
+                (set! (.. (js/document.querySelector "#program") -value)
+                      (ex/examples (keyword (.. e -target -value))))
+                (run-program!))}
    [:option {:value "diagonal"} "Diagonal Line"]
    [:option {:value "x"} "The Letter X"]
    [:option {:value "creeper"} "Creeper"]
@@ -154,11 +173,10 @@
      [visualizer @program-run @ui]
      [scrubber @program-run]]
     [:div.column.last
-     [:h2 "Drawing Tools"]
-     [tools]
+     [:h2 "Preview"]
+     [:div#svg]
      [:h2 "Examples"]
-     [examples]
-     ]]
+     [examples]]]
    [:div#footer
     [:p
      [:a {:href "https://github.com/nasser/sponge"} "Developed"]
@@ -170,10 +188,7 @@
      [:a {:href "https://eyebeam.org/communityyouth/playablefashion/"} "Playable Fashion"]
      " program at "
      [:a {:href "https://eyebeam.org/"} "Eyebeam"]
-     "."
-     ]
-    ]
-   ])
+     "."]]])
 
 
 
