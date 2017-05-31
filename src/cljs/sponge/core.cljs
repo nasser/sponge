@@ -82,8 +82,8 @@
           [:text.value (merge text-style {:style #js {:fontSize 20} :x 0 :y 6})
            (str (or (get regs r) 0))]
           
-          [:text.name (merge text-style {:y 40})
-           (string/upper-case (str r))]
+          [:text.name (merge text-style {:y 36})
+           (string/lower-case (str r))]
           
           [:rect {:x (/ (+ (/ gap 2) box-width) -2)
                   :y -15
@@ -137,7 +137,7 @@
       ]]))
 
 (defn code-input []
-  [:textarea#program {:rows 21 :cols 25}])
+  [:textarea#program {:rows 16 :cols 25}])
 
 (defn examples []
   [:select
@@ -163,20 +163,26 @@
 
 (defn page [program-run]
   [:div
-   [:h1 "The Slowest Computer On Earth — Emulator Prototype"]
+   [:h1 "The Slowest Computer On Earth"]
    [:div#main
     [:div.column
      [:h2 "Code"]
-     [code-input]]
+     [code-input]
+     [:h2 "Instruction Preview"]
+     [:div#svg]]
     [:div.column.center
-     [:h2 "Grid and Registers"]
+     [:h2 "Sponge Grid & Memory Cells"]
      [visualizer @program-run @ui]
-     [scrubber @program-run]]
-    [:div.column.last
-     [:h2 "Preview"]
-     [:div#svg]
+     [:h2 "Printing & Execution"]
+     [scrubber @program-run]
      [:h2 "Examples"]
-     [examples]]]
+     [examples]]
+    #_ [:div.column.last
+     ; [:h2 "Instruction Preview"]
+     ; [:div#svg]
+     ; [:h2 "Examples"]
+     ; [examples]
+     ]]
    [:div#footer
     [:p
      [:a {:href "https://github.com/nasser/sponge"} "Developed"]
