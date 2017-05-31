@@ -8,9 +8,15 @@ template {
   display: none;
 }
 
+#app h1 {
+  text-align: center;
+}
+
 #main {
   display: flex;
+  justify-content: center;
   flex-direction: row;
+  margin: auto 0;
 }
 
 #main h2 {
@@ -18,7 +24,7 @@ template {
 }
 
 .column {
-  width: 600px;
+  width: 400px;
   margin-left: 1em;
   flex-direction: column;
 }
@@ -27,9 +33,11 @@ template {
   width: 400px;
 }
 
+/*
 .last.column {
   width: 200px;
 }
+*/
 
 textarea {
   font-family: monospace;
@@ -94,4 +102,14 @@ select {
 #footer {
   margin-top: 2em;
   text-align: center;
+}
+
+div#svg {
+    width:400px;
+    height:300px;
+}
+
+div#svg svg {
+    max-width: 100%;
+    max-height: 100%;
 }
