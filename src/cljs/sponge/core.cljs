@@ -147,6 +147,7 @@
                 (run-program!))}
    [:option {:value "diagonal"} "Diagonal Line"]
    [:option {:value "x"} "The Letter X"]
+   [:option {:value "smile"} "Smiley Face"]
    [:option {:value "creeper"} "Creeper"]
    [:option {:value "circle"} "Circle"]])
 

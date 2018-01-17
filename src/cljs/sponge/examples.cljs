@@ -2,6 +2,36 @@
 
 (def examples
   {
+   :smile
+"set a 2
+set b 8
+set c 1
+set e 6
+set f 7
+plot a b
++ a c a
+plot a b
+< a f d
+jump d e
+set a 2
+set b 3
+set f 7
+set e 15
+plot a b
++ a c a
+< a f d
+jump d e
+plot a b
+set a 1
+set b 7
+set f 8
+set e 24
+plot a b
++ a c a
+< a f d
+jump d e
+plot a b"
+
    :x
 "set a 0
 set b 0
