@@ -210,7 +210,10 @@
 
 (defn reload []
   (reagent/render [page program-run]
-                  (.getElementById js/document "app")))
+                  (.getElementById js/document "app"))
+  (set! (.. (js/document.querySelector "#program") -value)
+        (ex/examples :diagonal))
+  (run-program!))
 
 (defn ^:export main []
   (dev-setup)
