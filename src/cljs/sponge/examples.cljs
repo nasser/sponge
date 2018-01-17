@@ -4,7 +4,7 @@
   {
    :smile
 "set a 2
-set b 8
+set b 7
 set c 1
 set e 6
 set f 7
@@ -14,7 +14,7 @@ plot a b
 < a f d
 jump d e
 set a 2
-set b 3
+set b 2
 set f 7
 set e 15
 plot a b
@@ -23,7 +23,7 @@ plot a b
 jump d e
 plot a b
 set a 1
-set b 7
+set b 6
 set f 8
 set e 24
 plot a b
