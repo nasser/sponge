@@ -67,7 +67,8 @@
 
 (defn step [ctx]
   (when-let [[op & args] (get (ctx :instr) (ctx :ip))]
-    (apply (ops op) ctx args)))
+    (when (ops op)
+      (apply (ops op) ctx args))))
 
 (defn run [ctx]
   (take 200 ;; halting problem
