@@ -126,7 +126,7 @@
                 :x (+ 5 (* 10 (+ gap size)))} (str i)]])]))
 
 (defn visualizer [run {:keys [scrubber] :as ui}]
-  (let [step (nth run scrubber)]
+  (let [step (nth run (inc scrubber))]
     [:div#visualizer
      [:svg
       {:width 600
