@@ -104,8 +104,7 @@ plot b c
 + c f c
 > c e d
 jump d i
-jump f g
-set p 99"
+jump f g"
    :diagonal
 "set a 0
 set b 1
@@ -163,9 +162,9 @@ plot m n
 + n j o
 < o l m
 jump m g
-- d j d]
-* k e m]
-+ j m n]
-+ f n f]
+- d j d
+* k e m
++ j m n
++ f n f
 jump j g"
    })
