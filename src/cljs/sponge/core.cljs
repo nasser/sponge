@@ -119,7 +119,7 @@
                            :stroke "black"
                            :strokeOpacity 0.125}}])
      (for [i (range 10)]
-       [:g
+       [:g {:key i}
         [:text {:x (+ (/ size 2) (* (+ gap size) i))
                 :y (+ 12 5 (* 10 (+ gap size)))} (str i)]
         [:text {:y (+ (- size 6) (* (+ gap size) i))
